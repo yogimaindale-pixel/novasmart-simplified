@@ -1,21 +1,23 @@
 # NovaSmart AI Agent Architecture — Masterclass Knowledge Transfer (KT) & Developer Guide
 
-Welcome to the **NovaSmart AI Agent Architecture Masterclass Knowledge Transfer (KT) Document**. This guide provides junior developers and engineers with an end-to-end understanding of how AI agents are designed, built, documented, and orchestrated—ranging from simple single-purpose text agents to autonomous security governance multi-agent estates.
+Welcome to the **NovaSmart AI Agent Architecture Masterclass Knowledge Transfer (KT) Document**. This guide provides junior developers and engineers with an end-to-end understanding of how AI agents are designed, built, documented, and orchestrated—ranging from simple single-purpose text agents using in-memory dummy data to autonomous security governance multi-agent estates.
 
 ---
 
 ## 1. Architectural Overview & Learning Progression Map
 
-AI Agent architecture at NovaSmart is structured into eight progressive complexity tiers:
+AI Agent architecture at NovaSmart is structured into progressive, beginner-friendly complexity tiers:
 
 ```
 +-----------------------------------------------------------------------------------+
 |                        NOVASMART AGENT PROGRESSION MAP                            |
 +-----------------------------------------------------------------------------------+
 |                                                                                   |
-|  [Tier 1: Simple Agent]                                                           |
-|   - File: examples/01_simple_agent.py                                             |
-|   - Concept: Persona instruction + Basic input parsing + Static responses         |
+|  [Tier 1 Series: Simple In-Memory Single Agents (Zero Tools Needed)]              |
+|   - 01_simple_agent.py : Persona instructions & prompt greeting responses         |
+|   - 01b_email_classifier_agent.py : Ticket classification & urgency scoring        |
+|   - 01c_faq_retrieval_agent.py : In-memory FAQ search & match confidence          |
+|   - 01d_sentiment_moderator_agent.py : Product review sentiment & content safety   |
 |                                                                                   |
 |         |                                                                         |
 |         v                                                                         |
@@ -31,8 +33,7 @@ AI Agent architecture at NovaSmart is structured into eight progressive complexi
 |  [Tier 3: Retail Multi-Agent System]                                              |
 |   - File: examples/03_complex_multi_agent.py                                      |
 |   - Concept: System Coordinator Router + Specialized Sub-Agents                   |
-|              (Catalog Sub-Agent & Price Matcher Sub-Agent) + Multi-Tool           |
-|              Orchestration + Aggregated Enterprise Audit Logs                     |
+|              (Catalog Sub-Agent & Price Matcher Sub-Agent)                       |
 |                                                                                   |
 |         |                                                                         |
 |         v                                                                         |
@@ -40,7 +41,6 @@ AI Agent architecture at NovaSmart is structured into eight progressive complexi
 |  [Tier 4: Enterprise Customer Support Multi-Agent System]                        |
 |   - File: examples/04_customer_support_multi_agent.py                             |
 |   - Concept: Support Triage Router + Shipping Sub-Agent + Refund Sub-Agent        |
-|              + Order Tracking + Refund Eligibility Audits                         |
 |                                                                                   |
 |         |                                                                         |
 |         v                                                                         |
@@ -56,15 +56,13 @@ AI Agent architecture at NovaSmart is structured into eight progressive complexi
 |  [Tier 6: Human-in-the-Loop (HITL) Approval Agent]                                |
 |   - File: examples/06_human_in_the_loop_agent.py                                  |
 |   - Concept: Threshold Auditing + Approval Token Persistence                      |
-|              + State Pause & Resume Workflow                                      |
 |                                                                                   |
 |         |                                                                         |
 |         v                                                                         |
 |                                                                                   |
 |  [Tier 7: RAG Knowledge Retrieval Agent]                                          |
 |   - File: examples/07_rag_knowledge_agent.py                                      |
-|   - Concept: Retrieval-Augmented Generation + Vector/Keyword Search               |
-|              + Policy Document Chunking + Citation Synthesizer                    |
+|   - Concept: Retrieval-Augmented Generation + Policy Document Chunking             |
 |                                                                                   |
 |         |                                                                         |
 |         v                                                                         |
@@ -72,94 +70,42 @@ AI Agent architecture at NovaSmart is structured into eight progressive complexi
 |  [Tier 8: Autonomous Security Governance Multi-Agent Estate]                     |
 |   - File: examples/08_autonomous_governance_multi_agent.py                        |
 |   - Concept: Security Supervisor + Shadow Agent Discovery Sub-Agent               |
-|              + Shared Identity Right-Sizing + Compliance Evidence Generation       |
 |                                                                                   |
 +-----------------------------------------------------------------------------------+
 ```
 
 ---
 
-## 2. Technical Code Specifications
+## 2. Technical Code Specifications for Simple Agent Series
 
-### 2.1 Tier 1 Specification (`01_simple_agent.py`)
-- **Class**: `SimpleAgent`
-- **Purpose**: Encapsulates basic text message evaluation without backend database tools.
+### 2.1 Lesson 1b Specification (`01b_email_classifier_agent.py`)
+- **Class**: `SimpleEmailClassifierAgent`
+- **Purpose**: Classifies incoming customer emails into support categories (`BILLING`, `TECHNICAL_SUPPORT`, `SPAM`, `GENERAL_INQUIRY`) and assigns urgency levels (`CRITICAL`, `HIGH`, `LOW`, `NONE`).
+- **Data Source**: In-memory `DUMMY_EMAILS` list containing simulated email dictionaries.
 
-### 2.2 Tier 2 Specification (`02_intermediate_agent.py`)
-- **Class**: `IntermediateToolAgent`
-- **Purpose**: Demonstrates single-agent Model Context Protocol (MCP) tool execution.
+### 2.2 Lesson 1c Specification (`01c_faq_retrieval_agent.py`)
+- **Class**: `SimpleFAQAgent`
+- **Purpose**: Searches a dummy FAQ knowledge base (`DUMMY_FAQ_DATABASE`) using string token matching and returns answers with confidence scores.
 
-### 2.3 Tier 3 Specification (`03_complex_multi_agent.py`)
-- **Classes**: `NovaSmartCoordinatorAgent`, `CatalogInventorySubAgent`, `PriceMatcherSubAgent`
-- **Purpose**: Enterprise Retail Multi-Agent System orchestrating specialized sub-agents.
-
-### 2.4 Tier 4 Specification (`04_customer_support_multi_agent.py`)
-- **Classes**: `SupportTriageAgent`, `ShippingSubAgent`, `RefundSubAgent`
-- **Purpose**: 4-Agent Customer Support system running locally with zero external dependencies.
-
-### 2.5 Tier 5 Specification (`05_financial_audit_multi_agent.py`)
-- **Classes**: `AuditSupervisorAgent`, `HighValueAuditSubAgent`, `FraudRiskSubAgent`
-- **Purpose**: Financial compliance and fraud risk multi-agent auditing engine.
-
-### 2.6 Tier 6 Specification (`06_human_in_the_loop_agent.py`)
-- **Class**: `HumanInTheLoopAgent`
-- **Purpose**: Pauses execution for actions $\ge \$500$, generating approval tokens for manager review.
-
-### 2.7 Tier 7 Specification (`07_rag_knowledge_agent.py`)
-- **Class**: `RAGKnowledgeAgent`
-- **Purpose**: Performs keyword similarity retrieval over policy documentation and synthesizes cited answers.
-
-### 2.8 Tier 8 Specification (`08_autonomous_governance_multi_agent.py`)
-- **Classes**: `SecurityGovernanceSupervisorAgent`, `ShadowAgentDiscoverySubAgent`, `IdentityRightSizingSubAgent`
-- **Purpose**: Autonomous governance estate scanner discovering shadow workloads and shared logins.
+### 2.3 Lesson 1d Specification (`01d_sentiment_moderator_agent.py`)
+- **Class**: `SimpleModeratorAgent`
+- **Purpose**: Evaluates sentiment signals (`POSITIVE`, `NEUTRAL`, `NEGATIVE`) in product reviews and flags inappropriate spam/scam keywords for moderation.
 
 ---
 
-## 3. Execution Sequence Diagrams
+## 3. Junior Developer Quickstart Guide
 
-### 3.1 Autonomous Security Governance Multi-Agent Estate Flow (`08_autonomous_governance_multi_agent.py`)
-
-```
-+--------------------------+         +-------------------------------+         +----------------------------+
-| Security Audit Trigger   |  --->   | Security Governance Supervisor|  --->   | Shadow Discovery Sub-Agent |
-+--------------------------+         +-------------------------------+         +----------------------------+
-                                                    |                                       |
-                                                    |                                       | <--- Returns Shadow Workloads
-                                                    v                                       +----------------------------+
-                                     +-------------------------------+
-                                     | Identity Right-Sizing Agent   |
-                                     +-------------------------------+
-                                                    |
-                                                    | ---> Queries Shared Logins
-                                                    | <--- Flags Excessive Roles (roles/owner)
-                                                    v
-                                        +-----------------------+
-                                        | Compliance Evidence   |
-                                        +-----------------------+
-```
-
----
-
-## 4. Junior Developer Quickstart Guide
-
-### 4.1 Running All 8 Masterclass Lessons Locally
-
-Run any script using Python 3 directly on your local laptop:
+### Running All Simple Agent Lessons on Your Local Laptop
 
 ```bash
+# Tier 1 Series (Zero Tool Installation Needed!)
 python3 examples/01_simple_agent.py
-python3 examples/02_intermediate_agent.py
-python3 examples/03_complex_multi_agent.py
-python3 examples/04_customer_support_multi_agent.py
-python3 examples/05_financial_audit_multi_agent.py
-python3 examples/06_human_in_the_loop_agent.py
-python3 examples/07_rag_knowledge_agent.py
-python3 examples/08_autonomous_governance_multi_agent.py
+python3 examples/01b_email_classifier_agent.py
+python3 examples/01c_faq_retrieval_agent.py
+python3 examples/01d_sentiment_moderator_agent.py
 ```
 
-### 4.2 Best Practices Checklist for Engineers
-- [x] **Zero Third-Party Dependencies**: Built using standard Python libraries (`sqlite3`, `json`, `uuid`) so anyone can copy and run locally.
-- [x] **Parameterization**: Always use SQL placeholders (`?`) rather than string concatenation to block SQL injection.
+### Best Practices Checklist for Engineers
+- [x] **Zero Third-Party Dependencies**: Built using standard Python libraries (`json`, `sqlite3`, `uuid`) so anyone can copy and run locally.
+- [x] **In-Memory Dummy Data**: Uses clean Python dictionary lists so junior developers can easily modify sample datasets.
 - [x] **Line-by-Line Comments**: Write explanatory comments above every method and critical block so junior developers can follow logic easily.
-- [x] **Auditability**: Return structured dictionaries (`status`, `sub_agent`, `audit_trail`) instead of raw unformatted strings.
-- [x] **Human Control**: Use token-based state pause/resume for high-risk mutating operations.
