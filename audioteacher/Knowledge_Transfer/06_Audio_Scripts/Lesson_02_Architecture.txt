@@ -1,0 +1,9 @@
+Welcome back student. Today we are going to examine the architecture of the NovaSmart agent framework.
+The system consists of 4 primary components:
+Component one is the in-memory SQLite database initializer initialize_demo_database.
+Component two is the retail catalog tool function query_retail_database.
+Component three is the orchestrator class NovaSmartAgent.
+Component four is the suite of AGY skills in the dot agents directory, including enable-a2ui and build-rag.
+Let's pause and understand this with an example. Decoupling tool functions from the agent orchestrator allows developers to add new database or API tools in minutes.
+Now let's see where this appears in the repository. The NovaSmartAgent class is defined in novasmart_agent_framework dot py between lines 117 and 181.
+Congratulations, you now understand the 4-component architecture of NovaSmart!

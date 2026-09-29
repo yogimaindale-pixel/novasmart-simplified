@@ -1,0 +1,10 @@
+Welcome back student. Today we are going to practice answering technical interview questions based on NovaSmart.
+Question one: What are the advantages of zero-dependency Python agent frameworks?
+Spoken answer: Zero-dependency frameworks eliminate third-party security vulnerabilities, reduce cold start overhead, and provide sub-millisecond execution speeds for serverless deployments.
+Question two: How does Agent-to-User Interface A2UI improve user experience over plain text LLM streaming?
+Spoken answer: A2UI enables agents to stream structured UI component surfaces such as dynamic data tables, product cards, and interactive forms directly to modern web frontends.
+Question three: How do you handle database connections safely in ephemeral AI agents?
+Spoken answer: We use parameterized SQL queries and context managers in initialize_demo_database, preventing SQL injection and memory leaks.
+Let's pause and understand this with an example. Articulating A2UI rendering and lightweight tool dispatch demonstrates senior AI platform engineering skills in interviews.
+Now let's see where this appears in the repository. A2UI utilities are implemented in dot agents skills enable-a2ui template a2ui_utils dot py.
+Congratulations, you now understand how to defend NovaSmart in technical interviews!

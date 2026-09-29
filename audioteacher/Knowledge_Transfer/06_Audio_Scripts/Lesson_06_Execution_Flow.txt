@@ -1,0 +1,8 @@
+Welcome back student. Today we are going to trace the exact execution sequence when running novasmart_agent_framework dot py.
+Execution starts in the main block by calling initialize_demo_database to seed 3 retail products.
+Next, NovaSmartAgent is instantiated with agent name Retail Catalog Agent.
+Then, process_user_prompt is called with prompt 'Can you list all available products and prices?'.
+Finally, the agent executes query_retail_database and prints formatted JSON to stdout.
+Let's pause and understand this with an example. The clean execution flow ensures total predictability during automated testing and debugging.
+Now let's see where this appears in the repository. Execution sequence logic is defined in novasmart_agent_framework dot py between lines 185 and 203.
+Congratulations, you now understand the complete framework execution flow!

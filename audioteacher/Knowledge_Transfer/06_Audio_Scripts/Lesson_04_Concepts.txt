@@ -1,0 +1,7 @@
+Welcome back student. Today we are going to discuss core concepts implemented in NovaSmart.
+Concept one is Lightweight Tool Dispatch, registering Python functions in an agent dispatch map.
+Concept two is Agent-to-User Interface callbacks, converting model streams into interactive UI widgets.
+Concept three is Ephemeral In-Memory Database Seeding, provisioning SQLite memory databases during startup.
+Let's pause and understand this with an example. Ephemeral in-memory databases allow developers to test agent workflows instantly without setting up external database servers.
+Now let's see where this appears in the repository. In-memory database initialization is handled by initialize_demo_database in novasmart_agent_framework dot py.
+Congratulations, you now understand the core concepts of the NovaSmart framework!

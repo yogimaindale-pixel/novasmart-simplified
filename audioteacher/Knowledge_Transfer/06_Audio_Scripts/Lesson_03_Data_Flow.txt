@@ -1,0 +1,8 @@
+Welcome back student. Today we are going to trace data flow through NovaSmart.
+Data flow begins when a user prompt is passed to NovaSmartAgent dot process_user_prompt.
+The agent parses the prompt intent and delegates to execute_tool.
+execute_tool invokes query_retail_database, executing parameterized SQL queries against SQLite.
+Finally, the agent packages query results into a structured JSON response object containing status and data.
+Let's pause and understand this with an example. Standardizing agent responses into structured JSON ensures that frontend applications can render product cards and tables seamlessly.
+Now let's see where this appears in the repository. Process user prompt logic is implemented in novasmart_agent_framework dot py between lines 150 and 181.
+Congratulations, you now understand the end-to-end data flow sequence!

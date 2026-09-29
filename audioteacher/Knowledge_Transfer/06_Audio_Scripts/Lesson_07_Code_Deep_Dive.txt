@@ -1,0 +1,7 @@
+Welcome back student. Today we are going to perform a code deep dive into NovaSmartAgent and a2ui_utils.
+In NovaSmartAgent dot execute_tool, the agent looks up target tool names in its internal tools dictionary.
+It passes keyword arguments to the tool function and catches exceptions safely, returning error JSON if tools fail.
+In a2ui_utils dot py, the function a2ui_callback inspects model stream chunks, parsing component surface JSON and wrapping UI parts for frontend rendering.
+Let's pause and understand this with an example. Wrapping model output in A2UI surfaces allows modern web interfaces to display dynamic cards instead of plain text.
+Now let's see where this appears in the repository. A2UI callback functions are defined in dot agents skills enable-a2ui template a2ui_utils dot py between lines 220 and 259.
+Congratulations, you now understand the inner code mechanics of tool dispatch and A2UI callbacks!

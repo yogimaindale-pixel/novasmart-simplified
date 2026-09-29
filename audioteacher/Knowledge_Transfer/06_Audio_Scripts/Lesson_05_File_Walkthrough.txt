@@ -1,0 +1,6 @@
+Welcome back student. Today we are going to walk through the repository file structure.
+The root directory contains novasmart_agent_framework dot py and documentation files.
+The dot agents skills directory contains modular AGY skills including enable-a2ui, build-rag, setup-memory-bank, build-agent-frontend, and publish-to-github.
+Let's pause and understand this with an example. Structuring skills inside dot agents follows the Google Antigravity custom skill standard for modular agent capabilities.
+Now let's see where this appears in the repository. Skill configurations are declared in dot agents mcp_config dot json and SKILL dot md files.
+Congratulations, you now understand the codebase layout and skill directory structure!

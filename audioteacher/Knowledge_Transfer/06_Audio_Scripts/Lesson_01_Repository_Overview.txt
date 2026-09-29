@@ -1,0 +1,6 @@
+Welcome back student. Today we are going to explore the NovaSmart Simplified AI Agent Framework repository.
+Enterprise AI applications often suffer from over-complicated dependencies and slow tool execution latency.
+This repository solves that challenge by establishing a zero-dependency, lightweight Python AI agent framework.
+Let's pause and understand this with an example. Think of a lightweight sports car compared to a heavy cargo truck. By stripping away unnecessary weight, the agent executes database lookups and returns structured responses in sub-milliseconds.
+Now let's see where this appears in the repository. The core framework engine is implemented in novasmart_agent_framework dot py.
+Congratulations, you now understand the problem statement and lightweight framework architecture of NovaSmart!

@@ -1,0 +1,9 @@
+Welcome back student. Today we are going to learn how to modify and extend the NovaSmart framework.
+Suppose business requests adding an Order Status Lookup tool.
+First, define query_order_status function executing SQL lookups against an orders table.
+Second, register the function inside NovaSmartAgent tools dictionary.
+Third, update process_user_prompt to route order status prompts to the new tool.
+Fourth, execute python3 novasmart_agent_framework dot py to verify that the new tool returns clean JSON.
+Let's pause and understand this with an example. Adding a new tool takes under 15 lines of code thanks to NovaSmart's clean architecture.
+Now let's see where this appears in the repository. Tool registration occurs in NovaSmartAgent dot __init__ in novasmart_agent_framework dot py.
+Congratulations, you now understand how to safely extend the NovaSmart agent framework!
